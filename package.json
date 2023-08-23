@@ -1,0 +1,20 @@
+{
+  "name": "com.itismarcii.extension",
+  "version": "0.0.1",
+  "displayName": "itismarcii Extensions",
+  "description": "Helper classes for a better workflow.",
+  "keywords": [
+    "ObserverPattern",
+    "StateMachine",
+    "CommandPattern",
+    "FlyweightPattern",
+    "FactoryBase",
+    "GameManagerBase",
+    "MeshTable",
+    "MathConstants"
+  ],
+  "author": {
+    "name": "itismarcii"
+  },
+  "type": "Helper"
+}
