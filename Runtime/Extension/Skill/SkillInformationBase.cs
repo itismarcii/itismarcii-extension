@@ -6,8 +6,8 @@ namespace itismarciiExtansion.Runtime.Skill
     [Serializable]
     public class SkillInformationBase
     {
-        internal bool IsPerforming;
-        [SerializeField] internal float Duration;
-        [SerializeField] internal float Speed = 1;
+        public bool IsPerforming;
+        [SerializeField] public float Duration;
+        [SerializeField] public float Speed = 1;
     }
 }

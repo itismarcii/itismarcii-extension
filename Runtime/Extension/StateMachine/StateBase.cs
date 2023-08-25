@@ -2,7 +2,7 @@ namespace itismarciiExtansion.Runtime.StateMachine
 {
     public abstract class StateBase
     {
-        internal bool Enter(in StateMachineBase stateMachine)
+        public bool Enter(in StateMachineBase stateMachine)
         {
             if(!CanChangeTo(stateMachine.CurrentState)) return false;
             stateMachine.CurrentState.Exit();

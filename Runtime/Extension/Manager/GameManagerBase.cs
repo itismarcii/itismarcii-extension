@@ -20,7 +20,7 @@ namespace itismarciiExtansion.Runtime.Manager
             OnAwake();
         }
 
-        internal static bool HasComponent(in byte n) => (ComponentBit & (1 << n)) != 0;
+        public static bool HasComponent(in byte n) => (ComponentBit & (1 << n)) != 0;
 
         protected virtual void OnAwake() {}
 

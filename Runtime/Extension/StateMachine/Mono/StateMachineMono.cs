@@ -4,7 +4,7 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
 {
     public abstract class StateMachineMono : MonoBehaviour
     {
-        internal StateMono CurrentState { get; private set; }
+        public StateMono CurrentState { get; private set; }
 
         public virtual void Init(in StateMono idleState)
         {
@@ -77,6 +77,6 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
         protected virtual void OnTriggerEnterState(in Collider other) {}
         protected virtual void OnTriggerStayState(in Collider other) {}
         protected virtual void OnTriggerExitState(in Collider other) {}
-        internal virtual void OnExitState() {}
+        public virtual void OnExitState() {}
     }
 }

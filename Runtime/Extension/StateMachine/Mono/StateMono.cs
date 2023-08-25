@@ -14,14 +14,14 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
         }
         
         protected abstract void OnEnter(in StateMachineMono stateMachine = null);
-        internal abstract void Update(in StateMachineMono stateMachine = null);
-        internal abstract void FixeUpdate(in StateMachineMono stateMachine = null);
-        internal virtual void OnCollisionEnter(in Collision other, in StateMachineMono stateMachine = null) {}
-        internal virtual void OnCollisionStay(in Collision other, in StateMachineMono stateMachine = null) {}
-        internal virtual void OnCollisionExit(in Collision other, in StateMachineMono stateMachine = null) {}
-        internal virtual void OnTriggerEnter(in Collider other, in StateMachineMono stateMachine = null) {}
-        internal virtual void OnTriggerStay(in Collider other, in StateMachineMono stateMachine = null) {}
-        internal virtual void OnTriggerExit(in Collider other, in StateMachineMono stateMachine = null) {}
+        public abstract void Update(in StateMachineMono stateMachine = null);
+        public abstract void FixeUpdate(in StateMachineMono stateMachine = null);
+        public virtual void OnCollisionEnter(in Collision other, in StateMachineMono stateMachine = null) {}
+        public virtual void OnCollisionStay(in Collision other, in StateMachineMono stateMachine = null) {}
+        public virtual void OnCollisionExit(in Collision other, in StateMachineMono stateMachine = null) {}
+        public virtual void OnTriggerEnter(in Collider other, in StateMachineMono stateMachine = null) {}
+        public virtual void OnTriggerStay(in Collider other, in StateMachineMono stateMachine = null) {}
+        public virtual void OnTriggerExit(in Collider other, in StateMachineMono stateMachine = null) {}
         protected abstract void Exit(in StateMachineMono stateMachine = null);
         protected abstract bool CanChangeTo(in StateMono state);
     }

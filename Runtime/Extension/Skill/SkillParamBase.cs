@@ -7,10 +7,10 @@ namespace itismarciiExtansion.Runtime.Skill
     [Serializable]
     public abstract class SkillParamBase
     {
-        internal Type SkillType;
-        internal SkillInformationBase Information;
-        [SerializeField] internal List<SkillBase> SkillStages;
-        internal List<SkillModifierBase> Modifiers;
+        public Type SkillType;
+        public SkillInformationBase Information;
+        [SerializeField] public List<SkillBase> SkillStages;
+        public List<SkillModifierBase> Modifiers;
 
         public SkillParamBase(in SkillBlueprintBase blueprint)
         {

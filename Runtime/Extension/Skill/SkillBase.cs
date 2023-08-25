@@ -6,10 +6,10 @@ namespace itismarciiExtansion.Runtime.Skill
 {
     public abstract class SkillBase : MonoBehaviour
     {
-        internal SkillParamBase Param;
+        public SkillParamBase Param;
         public SkillInformationBase Information { get; private set; }
         protected Transform Transform;
-        internal Action OnActivation, OnDeactivation, OnSetupBase, OnDisableSkill, OnForceStop;
+        public Action OnActivation, OnDeactivation, OnSetupBase, OnDisableSkill, OnForceStop;
         protected bool IsSetupBase;
 
         protected float SkillTime { get; private set; } = 0;
@@ -17,7 +17,7 @@ namespace itismarciiExtansion.Runtime.Skill
 
         protected bool IsForcedStop { get; private set; } = false;
 
-        internal virtual void SetupBase()
+        public virtual void SetupBase()
         {
             SetupParam();
             Transform = transform;
@@ -48,14 +48,14 @@ namespace itismarciiExtansion.Runtime.Skill
             }
         }
         
-        internal virtual void PerformFixedUpdateTime(in float deltaTime) {}
-        internal virtual void PerformFixedUpdatePercentage(in float percentage) { }
-        internal virtual void LastFixedUpdateTime(in float deltaTime) { }
-        internal virtual void LastFixedUpdatePercentage(in float percentage) { }
+        public virtual void PerformFixedUpdateTime(in float deltaTime) {}
+        public virtual void PerformFixedUpdatePercentage(in float percentage) { }
+        public virtual void LastFixedUpdateTime(in float deltaTime) { }
+        public virtual void LastFixedUpdatePercentage(in float percentage) { }
 
         protected abstract void SetupParam();
         
-        internal virtual void Activate()
+        public virtual void Activate()
         {
             if(Param.Information.Speed <= 0 || !IsSetupBase) return;
             
@@ -68,7 +68,7 @@ namespace itismarciiExtansion.Runtime.Skill
 
         protected virtual void BeforeActivation() {}
         
-        internal virtual void Deactivate()
+        public virtual void Deactivate()
         {
             StartCoroutine(InitSkillStages());
             OnDeactivation?.Invoke();
@@ -96,13 +96,13 @@ namespace itismarciiExtansion.Runtime.Skill
 
         protected abstract void ActivateSkill();
 
-        internal void DisableSkill()
+        public void DisableSkill()
         {
             OnDisableSkill?.Invoke();
             gameObject.SetActive(false);
         }
 
-        internal void ForceStop()
+        public void ForceStop()
         {
             IsForcedStop = true;
             OnForceStop?.Invoke();

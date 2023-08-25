@@ -8,10 +8,10 @@ namespace itismarciiExtansion.Runtime.Skill
         protected static SkillBase[] SkillPrefabs;
         
         public string BlueprintPrefabName;
-        internal Type SkillType { get; private set; }
-        internal SkillInformationBase Information;
-        internal List<SkillBlueprintBase> SkillStages = new List<SkillBlueprintBase>();
-        internal List<SkillModifierBase> Modifiers = new List<SkillModifierBase>();
+        public Type SkillType { get; private set; }
+        public SkillInformationBase Information;
+        public List<SkillBlueprintBase> SkillStages = new List<SkillBlueprintBase>();
+        public List<SkillModifierBase> Modifiers = new List<SkillModifierBase>();
 
         public SkillBlueprintBase(in SkillBase skillBase)
         {
