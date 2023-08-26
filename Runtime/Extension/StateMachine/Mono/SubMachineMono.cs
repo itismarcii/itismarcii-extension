@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace itismarciiExtansion.Runtime.StateMachine.Mono
 {
-    public abstract class SubMachineMono
+    public class SubMachineMono
     {
         public StateMono CurrentState { get; private set; }
         
