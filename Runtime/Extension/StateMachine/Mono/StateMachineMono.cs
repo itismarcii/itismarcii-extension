@@ -5,18 +5,6 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
     public abstract class StateMachineMono : MonoBehaviour
     {
         public StateMono CurrentState { get; private set; }
-        private SubMachineMono _SubMachineMono;
-        private bool HasSubMachine = false;
-
-        public SubMachineMono SubMachine
-        {
-            get => _SubMachineMono;
-            protected set
-            {
-                HasSubMachine = value != null;
-                _SubMachineMono = value;
-            }
-        }
         
         public virtual void Init(in StateMono idleState)
         {

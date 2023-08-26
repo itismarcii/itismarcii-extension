@@ -4,6 +4,19 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
 {
     public abstract class StateMono
     {
+        private SubMachineMono _SubMachineMono;
+        protected bool _HasSubMachine = false;
+
+        public SubMachineMono SubMachine
+        {
+            get => _SubMachineMono;
+            protected set
+            {
+                _HasSubMachine = value != null;
+                _SubMachineMono = value;
+            }
+        }
+        
         internal bool Enter(in StateMachineMono stateMachine)
         {
             if(!CanChangeTo(stateMachine.CurrentState)) return false;
