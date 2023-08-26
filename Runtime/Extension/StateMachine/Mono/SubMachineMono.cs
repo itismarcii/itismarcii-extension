@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace itismarciiExtansion.Runtime.StateMachine.Mono
 {
-    public abstract class StateMachineMono : MonoBehaviour
+    public abstract class SubMachineMono
     {
         public StateMono CurrentState { get; private set; }
         private SubMachineMono _SubMachineMono;
@@ -23,15 +23,15 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             CurrentState = idleState;
             if(CurrentState.Enter(this)) OnEnterState();
         }
-
-        public bool EnterState(in StateMono state)
+        
+        protected bool EnterState(in StateMono state)
         {
             if (!state.Enter(this)) return false;
             CurrentState = state;
             OnEnterState();
             return true;
         }
-
+        
         private void Update()
         {
             CurrentState.Update();
@@ -43,7 +43,7 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             CurrentState.FixeUpdate();
             OnFixedUpdateState();
         }
-
+        
         private void OnCollisionEnter(Collision other)
         {
             CurrentState.OnCollisionEnter(other);
@@ -79,7 +79,7 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             CurrentState.OnTriggerExit(other);
             OnTriggerExitState(other);
         }
-
+        
         protected virtual void OnEnterState() {}
         protected virtual void OnUpdateState() {}
         protected virtual void OnFixedUpdateState() {}

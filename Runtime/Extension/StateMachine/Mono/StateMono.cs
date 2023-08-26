@@ -13,7 +13,17 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             return true;
         }
         
+        internal bool Enter(in SubMachineMono stateMachine)
+        {
+            if(!CanChangeTo(stateMachine.CurrentState)) return false;
+            stateMachine.CurrentState.Exit();
+            stateMachine.OnExitState();
+            OnEnter(stateMachine);
+            return true;
+        }
+        
         protected abstract void OnEnter(in StateMachineMono stateMachine = null);
+        protected abstract void OnEnter(in SubMachineMono stateMachine = null);
         public abstract void Update(in StateMachineMono stateMachine = null);
         public abstract void FixeUpdate(in StateMachineMono stateMachine = null);
         public virtual void OnCollisionEnter(in Collision other, in StateMachineMono stateMachine = null) {}
