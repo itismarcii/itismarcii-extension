@@ -12,7 +12,7 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             if(CurrentState.Enter(this)) OnEnterState();
         }
         
-        protected bool EnterState(in StateMono state)
+        public bool EnterState(in StateMono state)
         {
             if (!state.Enter(this)) return false;
             CurrentState = state;
@@ -20,63 +20,63 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             return true;
         }
         
-        private void Update()
+        public void Update()
         {
             CurrentState.Update();
             OnUpdateState();
         }
 
-        private void FixedUpdate()
+        public void FixedUpdate()
         {
             CurrentState.FixeUpdate();
             OnFixedUpdateState();
         }
         
-        private void OnCollisionEnter(Collision other)
+        public void OnCollisionEnter(Collision other)
         {
             CurrentState.OnCollisionEnter(other);
             OnCollisionEnterState(other);
         }
 
-        private void OnCollisionStay(Collision other)
+        public void OnCollisionStay(Collision other)
         {
             CurrentState.OnCollisionStay(other);
             OnCollisionStayState(other);
         }
 
-        private void OnCollisionExit(Collision other)
+        public void OnCollisionExit(Collision other)
         {
             CurrentState.OnCollisionExit(other);
             OnCollisionExitState(other);
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void OnTriggerEnter(Collider other)
         {
             CurrentState.OnTriggerEnter(other);
             OnTriggerEnterState(other);
         }
 
-        private void OnTriggerStay(Collider other)
+        public void OnTriggerStay(Collider other)
         {
             CurrentState.OnTriggerStay(other);
             OnTriggerStayState(other);
         }
 
-        private void OnTriggerExit(Collider other)
+        public void OnTriggerExit(Collider other)
         {
             CurrentState.OnTriggerExit(other);
             OnTriggerExitState(other);
         }
         
-        protected virtual void OnEnterState() {}
-        protected virtual void OnUpdateState() {}
-        protected virtual void OnFixedUpdateState() {}
-        protected virtual void OnCollisionEnterState(in Collision other) {}
-        protected virtual void OnCollisionStayState(in Collision other) {}
-        protected virtual void OnCollisionExitState(in Collision other) {}
-        protected virtual void OnTriggerEnterState(in Collider other) {}
-        protected virtual void OnTriggerStayState(in Collider other) {}
-        protected virtual void OnTriggerExitState(in Collider other) {}
+        public virtual void OnEnterState() {}
+        public virtual void OnUpdateState() {}
+        public virtual void OnFixedUpdateState() {}
+        public virtual void OnCollisionEnterState(in Collision other) {}
+        public virtual void OnCollisionStayState(in Collision other) {}
+        public virtual void OnCollisionExitState(in Collision other) {}
+        public virtual void OnTriggerEnterState(in Collider other) {}
+        public virtual void OnTriggerStayState(in Collider other) {}
+        public virtual void OnTriggerExitState(in Collider other) {}
         public virtual void OnExitState() {}
     }
 }
