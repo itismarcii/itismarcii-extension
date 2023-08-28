@@ -2,7 +2,7 @@ namespace itismarciiExtansion.Runtime.StateMachine
 {
     public abstract class StateMachineBase
     {
-        public StateBase CurrentState { get; internal set; }
+        public StateBase CurrentState { get; private set; }
         
         public virtual void Init(in StateBase idleState)
         {
@@ -14,6 +14,7 @@ namespace itismarciiExtansion.Runtime.StateMachine
         {
             if (!state.Enter(this)) return;
             CurrentState = state;
+            CurrentState.OnEnter(this);
             OnEnterState();
         }
         
