@@ -2,7 +2,7 @@ namespace itismarciiExtansion.Runtime.StateMachine
 {
     public abstract class StateMachineBase
     {
-        public StateBase CurrentState { get; private set; }
+        public StateBase CurrentState { get; internal set; }
         
         public virtual void Init(in StateBase idleState)
         {

@@ -7,6 +7,7 @@ namespace itismarciiExtansion.Runtime.StateMachine
             if(!CanChangeTo(stateMachine.CurrentState)) return false;
             stateMachine.CurrentState.Exit();
             stateMachine.OnExitState();
+            stateMachine.CurrentState = this;
             OnEnter(stateMachine);
             return true;
         }

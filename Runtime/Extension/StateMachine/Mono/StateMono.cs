@@ -22,6 +22,7 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             if(!CanChangeTo(stateMachine.CurrentState)) return false;
             stateMachine.CurrentState.Exit();
             stateMachine.OnExitState();
+            stateMachine.CurrentState = this;
             OnEnter(stateMachine);
             return true;
         }
@@ -31,6 +32,7 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             if(!CanChangeTo(stateMachine.CurrentState)) return false;
             stateMachine.CurrentState.Exit();
             stateMachine.OnExitState();
+            stateMachine.CurrentState = this;
             OnEnter(stateMachine);
             return true;
         }
