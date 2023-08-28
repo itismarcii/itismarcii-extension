@@ -4,7 +4,7 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
 {
     public abstract class StateMachineMono : MonoBehaviour
     {
-        public StateMono CurrentState { get; private set; }
+        public StateMono CurrentState { get; internal set; }
         
         public virtual void Init(in StateMono idleState)
         {
@@ -15,8 +15,6 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
         public bool EnterState(in StateMono state)
         {
             if (!state.Enter(this)) return false;
-            CurrentState = state;
-            CurrentState.OnEnter(this);
             OnEnterState();
             return true;
         }

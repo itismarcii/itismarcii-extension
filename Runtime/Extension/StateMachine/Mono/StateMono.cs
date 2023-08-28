@@ -22,6 +22,8 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             if(!CanChangeTo(stateMachine.CurrentState)) return false;
             stateMachine.CurrentState.Exit();
             stateMachine.OnExitState();
+            stateMachine.CurrentState = this;
+            OnEnter(stateMachine);
             return true;
         }
         
@@ -30,11 +32,13 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
             if(!CanChangeTo(stateMachine.CurrentState)) return false;
             stateMachine.CurrentState.Exit();
             stateMachine.OnExitState();
+            stateMachine.CurrentState = this;
+            OnEnter(stateMachine);
             return true;
         }
         
-        internal abstract void OnEnter(in StateMachineMono stateMachine = null);
-        internal abstract void OnEnter(in SubMachineMono stateMachine = null);
+        protected abstract void OnEnter(in StateMachineMono stateMachine = null);
+        protected abstract void OnEnter(in SubMachineMono stateMachine = null);
         public abstract void Update(in StateMachineMono stateMachine = null);
         public abstract void FixeUpdate(in StateMachineMono stateMachine = null);
         public virtual void OnCollisionEnter(in Collision other, in StateMachineMono stateMachine = null) {}
