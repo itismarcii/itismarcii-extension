@@ -9,6 +9,7 @@ Extension package that holds helper classes for an easier workflow
    - DoubleBuffer
    - MathfConstant
    - MeshTable
+   - Filo (FirstInLastOut)
 - Factory
   - FactoryBase (abstract class)
   - FactoryMono (abstract class derived from MonoBehaviour)
