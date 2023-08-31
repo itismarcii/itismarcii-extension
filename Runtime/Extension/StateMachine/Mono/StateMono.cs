@@ -49,5 +49,6 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
         public virtual void OnTriggerExit(in Collider other, in StateMachineMono stateMachine = null) {}
         protected abstract void Exit(in StateMachineMono stateMachine = null);
         protected abstract bool CanChangeTo(in StateMono state);
+        public void CallExit() => Exit();
     }
 }
