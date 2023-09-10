@@ -62,7 +62,7 @@ namespace itismarciiExtansion.Runtime.Extension.Character.Advanced2DMovement
             }
         }
 
-        private static void DashCancel(ref Advanced2DDashStruct component)
+        public static void DashCancel(ref Advanced2DDashStruct component)
         {
             component.IsDashing = false;
             component.OnFinish?.Invoke();

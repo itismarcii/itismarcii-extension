@@ -33,5 +33,7 @@ namespace itismarciiExtansion.Runtime.Extension.Character.Advanced2DMovement
             PreviousYPos = 0;
             StartJumpHeight = 0;
         }
+
+        public void Reset() => Velocity = Vector2.zero;
     }
 }
