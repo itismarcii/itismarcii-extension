@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52985f7e595e86a4aa8b0e89888be3bf, type: 3}
+  m_Name: New MovementParam
+  m_EditorClassIdentifier: 
+  _MovementSpeed: 10
+  _MovementAirModifierUp: 1.6
+  _MovementAirModifierDown: 0.9
+  _MovementGroundModifier: 1
+  _MaxJumpHeight: 8.94
+  _MinJumpHeight: 3.14
+  _JumpTimeUp: 0.5
+  _JumpTimeDown: 0.38
