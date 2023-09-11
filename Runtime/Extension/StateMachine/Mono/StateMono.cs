@@ -6,6 +6,7 @@ namespace itismarciiExtansion.Runtime.StateMachine.Mono
     {
         private SubMachineMono _SubMachineMono;
         protected bool _HasSubMachine = false;
+        public bool IsLocked { get; protected set; }
 
         public SubMachineMono SubMachine
         {
