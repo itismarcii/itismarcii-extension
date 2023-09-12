@@ -29,5 +29,12 @@ namespace itismarciiExtansion.Runtime.Extension.Character.Advanced2DMovement
             OnInit = null;
             OnFinish = null;
         }
+
+        public void Reset()
+        {
+            StartPos = EndPos;
+            IsDashing = false;
+        }
+
     }
 }
