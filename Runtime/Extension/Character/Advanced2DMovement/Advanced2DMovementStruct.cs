@@ -35,6 +35,6 @@ namespace itismarciiExtansion.Runtime.Extension.Character.Advanced2DMovement
         }
 
         public void Reset() => Velocity = Vector2.zero;
-        public void CancelUpVelocity() => _Velocity.y = _Velocity.y > 0 ? 0 : _Velocity.y;
+        public void CancelUpVelocity() => Velocity.y = Velocity.y > 0 ? 0 : Velocity.y;
     }
 }
