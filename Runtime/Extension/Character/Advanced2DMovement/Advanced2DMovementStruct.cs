@@ -10,12 +10,14 @@ namespace itismarciiExtansion.Runtime.Extension.Character.Advanced2DMovement
         internal Rigidbody2D Rgb;
         internal Transform Transform;
         internal Vector3 Forward;
-        internal bool IsJump;
+        public bool IsJump { get; internal set; }
         internal bool IsJumpPressed;
         internal float MovementValue;
         internal Vector2 Velocity;
         internal float PreviousYPos;
         internal float StartJumpHeight;
+
+		public float YVelocity => Velocity.y;
 
         public Advanced2DMovementStruct(in Rigidbody2D rgb, in Advanced2DMovementParam param)
         {
